@@ -1,0 +1,291 @@
+@import "_fonts"
+@import "_settings"
+@import "_syntax"
+
+body
+  font-family: $body-font
+  font-size: $body-font-size
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  color: $medium
+  background-color: white
+  margin: 0
+  &.docs
+    padding-top: 0
+
+@media screen and (max-width: 900px)
+  body.docs
+    padding-top: 0
+
+hr
+  border: 0
+  border-radius: 1px
+  border-bottom: 1px solid rgba(0,0,0,0.1)
+a
+  text-decoration: none
+  color: $medium
+
+img
+  border: none
+
+h1, h2, h3, h4, strong
+  font-weight: 600
+  color: $dark
+
+code, pre
+  font-family: $code-font
+  font-size: $code-font-size
+  // line-height: $code-font-size
+  -webkit-font-smoothing: initial
+  -moz-osx-font-smoothing: initial
+
+code
+  color: #e96900
+  // background-color: #eee
+  background-color: $codebg
+  border: 1px solid darken($codebg, 10%)
+  padding: 3px 4px 1px 4px
+  margin: 0 2px
+  border-radius: 2px
+  word-break: break-all
+  // white-space: nowrap
+
+em
+  color: $light
+
+p
+  word-spacing: 0.05em
+
+.button
+  padding: 0.32em 2em
+  line-height: 2em
+  border-radius: 4px
+  display: inline-block
+  color: #fff
+  background-color: alpha($color_theme, 0.8)
+  transition: all .15s ease
+  box-sizing: border-box
+  &.white
+    background-color: #fff
+    color: $color_theme !important
+  &.clear
+    background: #0000
+  &.gray
+    background-color: #999
+  &:hover
+    color: #fff !important
+  &:hover,&.active,&:active
+    background: alpha($color_theme, 1)
+    box-shadow: $box-shadow-float
+
+.highlight
+  $code-line-height = 1.5em
+  overflow-x: auto
+  background-color: $codebg
+  padding: 0
+  line-height: 1.1em
+  border-radius: $radius
+  position: relative
+  table, tr, td
+    width: 100%
+    border-collapse: collapse
+    padding: 0
+    margin: 0
+  .gutter
+    width: 1.5em
+    background: darken($codebg, 5%)
+    pre
+      text-align: right
+      padding: 0 1em
+      background-color: #0000
+      line-height: $code-line-height
+  .code
+    pre
+      background: $codebg
+      padding: 1.5em
+      line-height: $code-line-height
+      margin: 0
+    .line
+      min-height: $code-line-height
+    &.code:before
+      content: " "
+      position: absolute
+      top: 0
+      right: 0
+      color: #0006
+      text-align: right
+      font-size: .75em
+      padding: 5px 10px 0
+      line-height: 15px
+      height: 15px
+
+  &.c .code:before
+    content: "C"
+  &.swift .code:before
+    content: "SWIFT"
+  &.objc .code:before
+    content: "OBJECTIVE-C"
+  &.html .code:before
+    content: "HTML"
+  &.js .code:before
+    content: "JS"
+  &.bash .code:before
+    content: "BASH"
+  &.shell .code:before
+    content: "SHELL"
+  &.css .code:before
+    content: "CSS"
+  &.stylus .code:before
+    content: "STYLUS"
+  &.less .code:before
+    content: "LESS"
+  &.java .code:before
+    content: "JAVA"
+  &.python .code:before
+    content: "PYTHON"
+  &.yaml .code:before
+    content: "YAML"
+
+.hljs
+    background: none !important
+#main
+  position: relative
+  z-index: 1
+  padding: 0 60px 30px
+  overflow-x: hidden
+
+#nav
+  .nav-link
+    cursor: pointer
+  .nav-dropdown-container
+    .nav-link
+      &:hover:not(.current)
+        border-bottom: none
+    &:hover
+      .nav-dropdown
+        display: block
+    &.language, &.ecosystem
+      margin-left: 20px
+    .arrow
+      pointer-events: none
+  .nav-dropdown
+    display: none
+    box-sizing: border-box
+    max-height: "calc(100vh - %s)" % $header-height
+    overflow-y: auto
+    position: absolute
+    top: 100%
+    right: -15px
+    background-color: #fff
+    padding: 10px 0
+    border: 1px solid #ddd
+    border-bottom-color: #ccc
+    text-align: left
+    border-radius: 4px
+    white-space: nowrap
+    li
+      line-height: 1.8em
+      margin: 0
+      display: block
+      > ul
+        padding-left: 0
+      &:first-child
+        h4
+          margin-top: 0
+          padding-top: 0
+          border-top: 0
+    a, h4
+      padding: 0 24px 0 20px
+    h4
+      // text-transform: uppercase
+      font-size: .78em
+      color: alpha($dark, 0.45)
+      margin: .45em 0 0
+      padding-top: .45em
+      border-top: 1px solid #eee
+    a
+      color: lighten($dark, 10%)
+      font-size: .95em
+      font-weight: bold
+      display: block
+      &:hover
+        color: $color_theme
+  .arrow
+    display: inline-block
+    vertical-align: middle
+    margin-top: -1px
+    margin-left: 6px
+    margin-right: -14px
+    width: 0
+    height: 0
+    border-left: 4px solid transparent
+    border-right: 4px solid transparent
+    border-top: 5px solid #ccc
+
+sup.beta.beta
+  font-size: .6em
+  margin-left: .7em
+  text-transform: uppercase
+  opacity: .6
+
+@media print
+  body
+    color: rgb(0,0,0)
+  .highlight
+    padding: 0
+    page-break-inside: avoid
+    .code
+      pre
+        color: rgb(0,0,0)
+        background-color: rgb(255,255,255)
+        border-style: solid
+        border-width: 2px 2px 2px 2px
+        border-color: #e8e8e8
+        page-break-inside: avoid
+  h1,h2,h3,h4,h5
+    color: rgb(0,0,0)
+    page-break-after: avoid
+    page-break-before: avoid
+  img
+    page-break-inside: avoid
+  h2+p
+    page-break-before: avoid
+  a:link:after, a:visited:after { content:" [" attr(href) "] "; }
+
+#comments
+  #valine_container
+    .info
+      display: none;
+
+
+#footer
+  padding: 40px 0 80px
+  color: $light
+  text-align: center
+  p
+    font-size: .8em
+  a
+    color: $light
+    hoverable_text()
+  .social-wrapper
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+    a
+      position: relative
+      display: inline-block
+      text-align: center
+      display: flex
+      justify-content: center
+      align-items: center
+      flex-wrap: wrap
+      width: 1.2em
+      height: 1.2em
+      margin: 4px
+      padding: .5em
+      border-radius: 50%
+      background-color: transparent
+      transition_all()
+      &:hover
+        color: $color_theme
+        background-color: color_for_bg($color_theme)

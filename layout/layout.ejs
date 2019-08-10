@@ -1,0 +1,97 @@
+<!-- <% var isIndex = page.path === 'index.html' %> -->
+<% var isIndex = false %>
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <title><%- (config.resume && config.resume.title) ? config.resume.title : theme.resume.title %></title>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@18.12.27/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@18.12.27/favicon/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@18.12.27/favicon/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@18.12.27/favicon/favicons/favicon-16x16.png">
+    <link rel="manifest" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@18.12.27/favicon/favicons/site.webmanifest">
+    <link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@18.12.27/favicon/favicons/safari-pinned-tab.svg" color="#f24e32">
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xaoxuu/assets@18.12.27/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#f24e32">
+    <meta name="msapplication-config" content="https://cdn.jsdelivr.net/gh/xaoxuu/assets@18.12.27/favicon/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#FFFFFF">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+
+    <!-- style.css -->
+    <%- css(isIndex ? 'css/index' : 'css/page') %>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+
+    <script>
+      Vue.config.productionTip = false
+      window.PAGE_TYPE = "resume"
+    </script>
+
+  </head>
+  <body class="<%- isIndex ? '' : 'docs' -%>">
+    <div id="mobile-bar" <%- isIndex ? 'class="top"' : '' %>>
+      <a class="menu-button fas fa-bars"></a>
+      <h2 class="nav-title"><%- (config.resume && config.resume.title) ? config.resume.title : theme.resume.title %></h2>
+    </div>
+
+    <% if (!isIndex) { %>
+      <div id="main" class="fix-sidebar">
+        <%- body %>
+      </div>
+      <script src="<%- url_for("js/smooth-scroll.min.js") %>"></script>
+    <% } else { %>
+      <%- body %>
+    <% } %>
+
+    <footer id="footer">
+      <% if (theme.footer.copyright) { %>
+        <p><%- markdown(theme.footer.copyright) %></p>
+      <% } %>
+      <% if (theme.footer.counter) { %>
+        <p>本站总访问量为 <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次</p>
+        <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+      <% } %>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+
+    <!-- main custom script for sidebars, version selects etc. -->
+    <script src="<%- url_for("js/css.escape.js") %>"></script>
+    <script src="<%- url_for("js/common.js") %>"></script>
+
+
+    <!-- fastclick -->
+    <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      FastClick.attach(document.body)
+    }, false)
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script>
+      let LAZY_LOAD_IMAGE = "<%- config.lazyload %>";
+      $("body").find("fancybox").find("img").each(function () {
+          var element = document.createElement("a");
+          $(element).attr("data-fancybox", "gallery");
+          $(element).attr("href", $(this).attr("src"));
+          /* 图片采用懒加载处理时,
+           * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+           * 那么此处将原本的属性名src替换为对应属性名data-original,
+           * 修改如下
+           */
+           if (LAZY_LOAD_IMAGE) {
+             $(element).attr("href", $(this).attr("data-original"));
+           }
+          $(this).wrap(element);
+      });
+    </script>
+
+  </body>
+</html>

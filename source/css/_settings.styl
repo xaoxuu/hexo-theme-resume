@@ -1,0 +1,80 @@
+// font faces
+$body-font = 'Varela Round', "Source Sans Pro", "Helvetica Neue", Arial, sans-serif
+$logo-font = Skranji, "Source Sans Pro", "Helvetica Neue", Arial, sans-serif, cursive
+$code-font = Menlo, "Roboto Mono", Monaco, courier, monospace
+
+// font sizes
+$body-font-size = 15px
+$code-font-size = 0.8em
+
+// colors
+$dark   = #2c3e50
+$medium = #34495e
+$light  = #7f8c8d
+$green  = #42b983
+$color_mac_maximize = #3DC550
+$color_mac_minimize = #FFBD2B
+$color_mac_close = #FE5F58
+$color_mac_finder = #1BB9FA
+
+$border = #dddddd
+$codebg = color_for_bg(#52A1F8)
+$gridbg = #f8f8f8
+$red = #ff6666
+$info = #1C90F3
+
+$color_ax_light_pink = #E7BED0
+$color_ax_light_red = #FF8485
+$color_ax_red = #F24E32
+$color_ax_blue = #52A1F8
+
+$color_success = #28C940
+$color_warning = #FFBD2D
+$color_error = #FF6058
+
+$color_theme = $color_mac_finder
+$color_link = $color_mac_finder
+$color_link_highlight = #ff5722
+
+$gap = 20px
+$radius = 4px
+$content-padding-top = 10px
+$mobile-content-padding-top = 30px
+$nav-height = 54px
+
+// header settings
+$header-inner-height = 40px
+$heading-padding-vertical = 10px
+$header-height = $header-inner-height + $heading-padding-vertical * 2
+$mobile-header-height = 40px
+// prevent headers from being covered by the top nav upon navigation
+$heading-link-padding-top = $header-height + $content-padding-top
+$mobile-heading-link-padding-top = $mobile-header-height + $mobile-content-padding-top
+$h2-margin-top = 45px
+$h3-margin-top = 52px
+
+$box-shadow-nav = 0 1px 1px rgba(0,0,0,.12), 0 2px 2px rgba(0,0,0,.08)
+$box-shadow-nav-mobile = $box-shadow-nav
+$box-shadow-float = 0 4px 8px rgba(0,0,0,0.12), 0 8px 16px rgba(0,0,0,0.12), 0 16px 32px rgba(0,0,0,0.12)
+
+
+transition_all(time = 0.28s)
+  $a = time
+  transition: all $a ease
+  -moz-transition: all $a ease
+  -webkit-transition: all $a ease
+  -o-transition: all $a ease
+
+card()
+  transition_all()
+  &:hover
+    box-shadow: 0 0 4px rgba(0,0,0,.1), 0 0 8px rgba(0,0,0,.08)
+
+hoverable_text()
+  transition_all(0.2s)
+  &:hover
+    color: $color_link_highlight !important
+
+color_for_bg(color = #ccc)
+  $a = color
+  return lighten(desaturate($a, 10%), 88%)

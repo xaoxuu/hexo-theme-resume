@@ -1,0 +1,331 @@
+@import "_common"
+@import "_header"
+@import "_sidebar"
+
+$width = 900px
+$space = 40px
+
+body
+  background-color #fff
+  #header
+    box-shadow: none
+
+#logo
+  span
+    font-size 1.2em
+  img
+    display none
+
+.sidebar
+  display none
+
+#mobile-bar
+  &.top
+    background-color transparent
+    box-shadow none
+    .logo
+      display none
+
+#hero
+  padding $nav-height $gap $gap
+  background-color #fff
+  .inner
+    max-width $width
+    margin $gap auto
+    display flex
+    justify-content center
+    align-items center
+    .left, .right
+      display inline-block
+  .hero-logo
+    width 13em
+    height 13em
+    float right
+    margin-right 60px
+    border-radius 50%
+  h1
+    font-weight 300
+    margin 0
+    font-size 2.4em
+  h2
+    font-family $logo-font
+    color: $color_theme
+    font-weight 500
+    font-size 2.4em
+    // margin 0 0 $gap
+    display none
+  .button
+    margin 1em 0
+    font-size 1.05em
+    font-weight 600
+    letter-spacing .1em
+    min-width 8em
+    text-align center
+    &:not(:last-child)
+      margin-right 1%
+  ul, ol
+    // FIX: Some link click targets are covered without this
+    position: inherit
+    margin 0px
+    &.center
+      justify-content: center
+    &.pure
+      padding: 0
+      display: flex
+      flex-wrap: wrap
+      @media screen and (max-width: 900px)
+        justify-content: center
+      li
+        margin: 4px
+        display: flex
+        width: 100px
+        flex-direction: column
+        align-items: stretch
+        vertical-align: middle
+        text-align: center
+        font-size: 0.9em
+        overflow: hidden
+        border-radius: 4px
+        background: alpha($color_theme, 0.7)
+        transition_all()
+        a
+          padding: 8px
+          margin: 0
+          font-size: 0.9em
+          line-height: 1.8em
+          font-weight bold
+          display: flex
+          flex-direction: column
+          align-items: center
+          text-align: center
+          border-radius: 4px
+          color: white
+          i
+            font-size: 2em
+            margin-top: 8px
+        img
+          margin-bottom: 8px
+        &:hover,&.active,&:active
+          background: alpha($color_theme, 1)
+          transform: scale(1.03)
+          border-radius: 4px
+          box-shadow: $box-shadow-float
+      &.rounded
+        img
+          border-radius: 25%
+      &.circle
+        img
+          border-radius: 50%
+
+  .social-buttons
+    list-style-type none
+    padding 0
+    li
+      display inline-block
+      vertical-align middle
+      margin-right 15px
+  .social-wrapper
+    display flex
+    justify-content flex-start
+    flex-wrap wrap
+    margin $gap 0 0
+    a
+      color #fff
+      position relative
+      display inline-block
+      text-align center
+      display flex
+      justify-content center
+      align-items center
+      flex-wrap wrap
+      border-radius 50%
+      margin 4px
+      width 2.2em
+      height 2.2em
+      font-size 1.2em
+      &:first-child
+        margin-left: 0
+      &:last-child
+        margin-right: 0
+      background-color $color_theme
+      transition_all()
+      &:hover
+        color: $color_theme
+        background-color: color_for_bg($color_theme)
+
+
+#special-sponsor
+  background-color #fff
+  text-align center
+  padding-bottom 30px
+  h3
+    margin 0
+  a
+    color $light
+  a, span, img
+    display inline-block
+    vertical-align middle
+  img
+    margin 15px
+
+#highlights
+  background-color #fff
+  .inner
+    max-width $width
+    margin 0 auto
+    text-align center
+    display flex
+    justify-content space-around
+  .point
+    display inline-block
+    vertical-align top
+    box-sizing border-box
+    padding 0 2em
+    h2
+      color $color_theme
+      font-size 1.5em
+      font-weight 400
+      margin 0
+      padding .5em 0
+    p
+      color $light
+
+#posts
+  background-color #fff
+  .inner
+    max-width $width
+    margin $space auto
+    text-align center
+  .content
+    text-align justify
+    background-color $gridbg
+    border-radius $radius
+    padding $gap
+    margin $gap
+    .header
+      text-align left
+      display flex
+      justify-content space-between
+      align-items center
+      h5
+        margin 0
+    .highlight
+      margin: 1.2em 0
+      text-align: justify
+      .gutter
+          background: darken($codebg, 5%)
+      .code pre
+          background: $codebg
+    .readmore
+      text-align left
+      padding $gap * 0.5
+      margin 0
+      width inherit
+  a
+    color $color_link
+    hoverable_text()
+    &.button
+      color #fff
+    &.button:hover
+      color #fff !important
+  h2
+    margin 0
+    z-index: 9
+    // font-family: $logo-font
+    font-size 1.3em
+    font-weight bold
+    background: #fff
+    height: $nav-height
+    line-height: $nav-height
+    position: sticky !important
+    position: -webkit-sticky !important
+    top: 0
+  h3
+    color $color_theme
+    a
+      color: $color_theme
+      &:hover
+        text-decoration: underline;
+    font-size 1.2em
+    font-weight 500
+    padding 0
+    margin  0
+  h5
+    font-size .9em
+    font-weight: normal
+    color $light
+    padding 0
+    margin 1em 0 .2em
+  p
+    text-align justify
+    padding 0
+    margin 1em 0
+  .readmore
+    background-color color_for_bg($color_ax_blue)
+    padding $gap
+    margin 0 $gap
+
+
+@media screen and (max-width $width)
+  body
+    -webkit-text-size-adjust none
+    font-size 14px
+  .sidebar
+    display block
+  #header
+    display none
+  #mobile-bar
+    display block
+  #hero
+    .inner
+      display inline-block
+      width 100%
+      .hero-logo
+        float none
+        margin 30px 0 15px
+        width 8em
+        height 8em
+      .left, .right
+        text-align center
+        width 100%
+      .social-wrapper
+        display flex
+        justify-content center
+        a
+          font-size: 1em
+          width 1.2em
+          height 1.2em
+          padding: .4em
+    h1
+      font-size 1.5em
+    h2
+      display block
+      font-size 2em
+    .button
+      font-size .9em
+  #special-sponsor
+    span
+      display block
+    img
+      width 125px
+  #highlights
+    .point
+      display block
+      margin 0 auto
+      width 300px
+      padding 0 40px 30px
+      &:before
+        content "—"
+        color $color_theme
+  #posts
+    h2
+      line-height: $nav-height
+      height: $nav-height
+      background: transparent
+      margin-left: $nav-height
+      margin-right: $nav-height
+    .content
+      .header
+        display inline
+        h5
+          margin 1em 0 .2em

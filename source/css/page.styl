@@ -1,0 +1,396 @@
+@import "_common"
+@import "_header"
+@import "_sidebar"
+@import "_style-guide"
+@import "_readmore"
+
+#header
+  transition: background-color .3s ease-in-out
+
+.content
+  position: relative
+  padding: 46px 0
+  max-width: 800px
+  margin: 0 auto
+  padding-left: 50px
+  text-align: justify
+  // >:first-child
+  //   padding-top: 0
+  //   margin-top: 0
+  &.api
+    > a:first-of-type > h2
+      margin-top: 0
+      padding-top: 0
+    ul
+      padding-left: 1.25em
+      line-height: 1.4em
+      ul, p:not(.tip)
+        padding-bottom: 0
+        margin: 1.2em 0
+  .button
+    color: #fff
+    &:hover
+      color: #fff !important
+  fancybox
+    display: flex
+    img
+      border-radius: 2px
+  img
+    max-width: 100%
+  span.light
+    color: $light
+  span.info
+    font-size: .85em
+    display: inline-block
+    vertical-align: middle
+    width: 280px
+    margin-left: 20px
+  // h1
+  //   margin: 0 0 1em
+  //   font-size: 1.8em
+  h2, h3
+    pointer-events: none
+    i
+      text-align: center
+      width: 28px
+      padding-right 2px
+    a, button
+      pointer-events: auto
+      color: $dark
+    &:before
+      content: ""
+      display: block
+      visibility: hidden
+      height: $heading-link-padding-top
+  h2
+    margin: $h2-margin-top 0 .8em
+    padding-bottom: .7em
+    border-bottom: 1px solid $border
+    font-size: 1.6em
+    a
+      color: $color_link
+    &:before
+      margin-top: -1 * $heading-link-padding-top + 15px
+  h3
+    margin: $h3-margin-top 0 1.2em
+    line-height: 1.2
+    position: relative
+    font-size: 1.4em
+    a, button
+      color: $dark
+    > a:before
+      color: $color_theme
+      position: absolute
+      left: -0.7em
+      margin-top: -0.05em
+      padding-right: 0.5em
+      font-size: 1.2em
+      line-height: 1
+      font-weight: bold
+    &:before
+      margin-top: -1 * $heading-link-padding-top - 15px
+  figure
+    margin: 1.2em 0
+  p, ul, ol
+    line-height: 1.6em
+    // HACK: Create area underneath paragraphs
+    // and lists that will be on top of heading
+    // anchors, for easier text highlighting.
+    margin: 1.2em 0
+    position: relative
+    z-index: 1
+  ul, ol
+    padding-left: 1.5em
+    // FIX: Some link click targets are covered without this
+    position: inherit
+    &.center
+      justify-content: center
+    &.pure
+      padding: 0
+      display: flex
+      flex-wrap: wrap
+      align-items: stretch
+      li
+        margin: 8px
+        display: flex
+        width: 86px
+        flex-direction: column
+        align-items: stretch
+        vertical-align: middle
+        text-align: center
+        font-size: .8em
+        line-height: 1.2em
+        overflow: hidden
+        a
+          display: flex
+          flex-direction: column
+          align-items: center
+          text-align: center
+          color: $dark
+        img
+          margin-bottom: 8px
+      &.rounded
+        img
+          border-radius: 25%
+      &.circle
+        img
+          border-radius: 50%
+      &.about
+        @media screen and (max-width: 900px)
+          justify-content: center
+
+  i
+    &.fa-fw
+      text-align: justify
+  a
+    word-break: break-all
+    color: $color_link
+    font-weight: 600
+    hoverable_text()
+    // i
+    //   &.fa-fw:first-child
+    //     margin 0
+  blockquote
+    margin: $gap 0
+    padding: $gap
+    border-left: 4px solid $color_theme
+    background-color: color_for_bg($color_theme)
+    border-radius: $radius
+    p
+      margin-left: 0
+      margin-bottom: 0
+      padding-bottom: 0
+      &:first-child
+        margin-top: 0
+  iframe
+    margin: 1em 0
+  > table
+    word-break: break-all
+    border-spacing: 0
+    border-collapse: collapse
+    margin: 1.2em auto
+    // padding: 0 0 1.2em 0
+    // display: block
+    width: 100%
+    overflow-x: auto
+    td, th
+      line-height: 1.5em
+      padding: .4em .8em
+      border: none
+      border: 1px solid #ddd
+      div
+        &:before
+          display: inline-block
+          font: normal normal normal 14px/1 FontAwesome
+          font-size: inherit
+          text-rendering: auto
+          -webkit-font-smoothing: antialiased
+          width: 20px
+          height: 16px
+          text-align: center
+        a
+          color: inherit
+          &:hover
+            color: inherit !important
+            text-decoration: underline
+        &.unknown
+          color: $color_warning
+          &:before
+            content: "\f0ac"
+        &.unsafe
+          color: $color_error
+          &:before
+            content: "\f059"
+        &.safe
+          color: $color_success
+          &:before
+            content: "\f023"
+        &.plain
+          &:before
+            content: ""
+            width: 0
+        &.safe.apple
+          &:before
+            content: "\f179"
+        &.safe.google
+          &:before
+            content: "\f1a0"
+        &.safe.local
+          &:before
+            content: "\f07c"
+        &.safe.github
+          &:before
+            content: "\f09b"
+
+    th
+      font-weight: bold
+      text-align: left
+    th, tr:nth-child(2n)
+      background-color: #f8f8f8
+      code
+        background-color: #efefef
+  p
+    word-break: break-all
+    strong
+      // margin 0 2px
+    &.tip, &.success
+      margin: $gap 0
+      padding: $gap
+      border-left-width: 4px
+      border-left-style: solid
+      background-color: $gridbg
+      position: relative
+      border-bottom-right-radius: $radius
+      border-top-right-radius: $radius
+      &:before
+        position: absolute
+        top: $gap
+        left: -12px
+        color: #fff
+        width: 20px
+        height: 20px
+        border-radius: 100%
+        text-align: center
+        line-height: 22px
+        font-family: FontAwesome
+        font-size: 12px
+      code
+        background-color: #efefef
+      em
+        color: $medium
+    &.tip
+      border-left-color: $color_mac_close
+      background-color: color_for_bg(alpha($color_mac_close, 50%))
+      &:before
+        content: "\f12a"
+        background-color: $color_mac_close
+    &.success
+      border-left-color: $color_mac_maximize
+      background-color: color_for_bg(alpha($color_mac_maximize, 50%))
+      &:before
+        content: "\f00c"
+        background-color: $color_mac_maximize
+    .flex
+      display: flex
+      a
+        margin 0 4px
+      &.around
+        justify-content: space-around
+      &.start
+        justify-content: flex-start
+      &.end
+        justify-content: flex-end
+      &.center
+        justify-content: center
+      &.between
+        justify-content: space-between
+  p, .readmore
+    i, a
+      margin: 0 2px
+      text-align: center
+    a
+      margin: 0 2px
+  .readmore
+    i
+      width: 18px
+
+.guide-links
+  margin-top: 2em
+  height: 1em
+
+.footer
+  color: $light
+  margin-top: 2em
+  padding-top: 2em
+  border-top: 1px solid #e5e5e5
+  font-size: .9em
+
+#main.fix-sidebar
+  position: static
+  .sidebar
+    position: fixed
+
+@media screen and (min-width: 1590px)
+  #header
+    background-color: rgba(255,255,255,.8)
+
+@media screen and (max-width: 1300px)
+  .content.with-sidebar
+    margin-left: 260px
+  #ad
+    z-index: 1
+    position: relative
+    padding: 0
+    bottom: 0
+    right: 0
+    float: right
+    padding: 0 0 20px 30px
+
+@media screen and (max-width: 900px)
+  body
+    -webkit-text-size-adjust: none
+    font-size: 14px
+  #header
+    display: none
+  #logo
+    display: none
+  .nav-link
+    padding-bottom: 1px
+    &:hover, &.current
+      border-bottom: 2px solid $color_theme
+  #mobile-bar
+    display: block
+  #main
+    padding: 2em 1.4em 0
+  .highlight pre
+    padding: 1.2em 1em
+  .content
+    padding-left: 0
+    &.with-sidebar
+      margin: auto
+    h2, h3
+      &:before
+        content: ""
+        display: block
+        visibility: hidden
+        height: $mobile-heading-link-padding-top
+    h2
+      &:before
+        margin-top: -1 * $mobile-heading-link-padding-top + 0px
+    h3
+      &:before
+        margin-top: -1 * $mobile-heading-link-padding-top - 20px
+  .footer
+    margin-left: 0
+    text-align: center
+
+@media screen and (max-width: 560px)
+  #downloads
+    text-align: center
+    margin-bottom: 25px
+    .info
+      margin-top: 5px
+      margin-left: 0
+  iframe
+    margin: 0 !important
+
+@media print
+  .footer
+    display: none
+  .content
+    padding-left: 0px
+  .content p
+    line-height: 1.35em
+    &.tip
+      background-color: rgb(255,255,255)
+      border: 2px solid #e8e8e8
+      border-left: 4px solid $red
+
+[data-p="blue"]
+  color: #52A1F8
+[data-p="green"]
+  color: #3DC550
+[data-p="yellow"]
+  color: #FFBD2B
+[data-p="red"]
+  color: #FE5F58

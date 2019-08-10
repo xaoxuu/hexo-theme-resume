@@ -1,0 +1,126 @@
+@import "_settings"
+
+.sidebar
+  position: absolute
+  top: $header-height
+  left: 0
+  bottom: 0
+  overflow-x: hidden
+  overflow-y: auto
+  -webkit-overflow-scrolling: touch
+  -ms-overflow-style: none
+  header
+    padding-top: $gap
+    padding-left: 12px
+    h2
+      margin-bottom: 0
+      font-size: 2.4em
+    .meta
+      margin: $gap * 1.5 0
+    p
+      margin: 2px 0
+      line-height: 1.6em
+      font-size: 1em
+    a
+      margin: 0
+      display: inline
+      hoverable_text()
+  a
+    font-weight: bold
+    font-size: 1em
+  h2
+    margin-top: .2em
+  ul
+    list-style-type: none
+    margin: 0
+    line-height: 1.5em
+    padding-left: 1em
+    a
+      font-weight: inherit
+      font-size: 1.2em
+      hoverable_text()
+  li
+    margin-top: .5em
+  .sidebar-inner
+    width: 250px
+    padding: 0.5*$gap 20px 60px 60px
+  .version-select
+    vertical-align: middle
+    margin-left: 5px
+  .menu-root
+    padding-left: 0
+    font-weight: bold
+  .menu-sub
+    font-size: .85em
+    ul
+      font-weight: normal
+  .sidebar-link
+    color: $light
+    &.current
+      font-weight: 600
+      color: $color_theme
+    &.new
+      &:after
+        content: "NEW"
+        display: inline-block
+        font-size: 10px
+        font-weight: 600
+        color: #fff
+        background-color: $color_theme
+        line-height: 14px
+        padding: 0 4px
+        border-radius: 3px
+        margin-left: 5px
+        vertical-align: middle
+        position: relative
+        top: -1px
+    &:hover
+      border-bottom: 2px solid $color_theme
+  .section-link
+    &.active
+      font-weight: bold
+      color: $color_theme
+  .main-menu
+    margin-bottom: 20px
+    display: none
+    padding-left: 0
+    .seperator
+      background: #12f
+      display: none
+  .nav-dropdown
+    h4
+      font-weight: normal
+      margin: 0
+
+@media screen and (max-width: 900px)
+  .sidebar
+    position: fixed
+    z-index: 10
+    background-color: #f9f9f9
+    height: 100%
+    top: 0
+    left: 0
+    box-shadow: 1px 0 2px rgba(0,0,0,.08), 2px 0 4px rgba(0,0,0,.08), 4px 0 8px rgba(0,0,0,.06), 8px 0 16px rgba(0,0,0,.06)
+    transition: all .4s cubic-bezier(0.4, 0, 0, 1)
+    -webkit-transform: translate(-280px, 0)
+    transform: translate(-280px, 0)
+    .sidebar-inner
+      padding: 0.5*$gap 0.5*$gap 2*$mobile-content-padding-top $gap
+      box-sizing: border-box
+    .sidebar-inner-index
+      padding: 0.5*$gap 0.5*$gap 2*$mobile-content-padding-top $gap
+    .search-query
+      width: 200px
+      margin-bottom: 10px
+    .main-menu
+      display: block
+    .list
+      margin: 0 auto
+    &.open
+      -webkit-transform: translate(0, 0)
+      transform: translate(0, 0)
+      width: 280px
+
+@media print
+  .sidebar
+    display: none
