@@ -6,7 +6,7 @@
           <p><a href='<%- 'mailto:' + config.resume.email %>'><i class="fas fa-envelope fa-fw"></i>&nbsp;&nbsp;<%- config.resume.email %></a></p>
         <% } %>
         <% if (theme.sidebar && theme.sidebar.phone && config.resume && config.resume.phone) { %>
-          <p><i class="fas fa-phone-alt fa-fw"></i>&nbsp;&nbsp;<%- config.resume.phone %></p>
+          <p><a href='<%- 'tel:' + config.resume.phone %>'><i class="fas fa-phone-alt fa-fw"></i>&nbsp;&nbsp;<%- config.resume.phone %></a></p>
         <% } %>
       </div>
     <hr><br>
@@ -21,10 +21,10 @@
       </ul>
     </div>
     <% if (theme.sidebar && theme.sidebar.download && config.resume && config.resume.download) { %>
-      <br><br>
-      <a class="button" href="<%- config.resume.download.url %>"><i class="<%- config.resume.download.icon %>"></i> <%- config.resume.download.title %></a>
+      <div class="footer">
+        <a class="button" href="<%- config.resume.download.url %>"><i class="<%- config.resume.download.icon %>"></i> <%- config.resume.download.title %></a>
+      </div>
     <% } %>
-
   </div>
 </div>
 
