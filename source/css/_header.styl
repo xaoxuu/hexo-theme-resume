@@ -121,7 +121,7 @@ body.docs
     color: $dark
     font-weight: bold
     display: flex
-    margin 0 0 0 $nav-height
+    margin 0 $nav-height 0 $nav-height
   .menu-button
     position: absolute
     width: $nav-height
@@ -130,6 +130,10 @@ body.docs
     align-items: center
     justify-content: center
     font-size: 1.6em
+    &.right
+      font-size: 1.3em
+      top: 0
+      right: 0
   .logo
     opacity: 1
     position: absolute
