@@ -19,29 +19,31 @@ $style-guide-priority-d-color = white
     h2
       text-align: center
       margin-top: 0
-.style-example, details, .style-enforcement
-  border-radius $radius
-  margin: 1.6em 0
-  padding: 1.6em
-  h4
-    margin-top: 0
-  figure, p
-    &:last-child
-      margin-bottom: 0
-      padding-bottom: 0
-.style-example
-  &.example
-    background: $style-guide-bg
+  .style-example, details, .style-enforcement
+    border-radius $radius
+    margin: 1.6em 0
+    padding: 1.6em
     h4
-      color: $style-guide-text
-  &.example-bad
-    background: $style-guide-bad-bg
-    h4
-      color: $style-guide-bad-text
-  &.example-good
-    background: $style-guide-good-bg
-    h4
-      color: $style-guide-good-text
+      margin-top: 0
+    figure, p
+      &:last-child
+        margin-bottom: 0
+        padding-bottom: 0
+  .style-example
+    h3
+      margin-top: 2em
+    &.example
+      background: $style-guide-bg
+      h4
+        color: $style-guide-text
+    &.example-bad
+      background: $style-guide-bad-bg
+      h4
+        color: $style-guide-bad-text
+    &.example-good
+      background: $style-guide-good-bg
+      h4
+        color: $style-guide-good-text
 details, .style-enforcement
   background-color: $style-guide-bg
 details
