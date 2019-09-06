@@ -1,7 +1,7 @@
-# hexo-theme-resume
+# 简历主题
 
+示例：https://mxclub.github.io/resume
 
+示例源码：https://github.com/xaoxuu/resume-example
 
-示例源码： <https://github.com/mxclub/resume>
-
-在线效果：https://mxclub.github.io/resume
+主题源码：https://github.com/xaoxuu/hexo-theme-resume
