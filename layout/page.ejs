@@ -2,12 +2,10 @@
   <div class="sidebar-inner">
     <header class='header'><h2><%- (config.resume && config.resume.name) ? config.resume.name : theme.resume.name %></h2>
       <div class='meta'>
-        <% if (theme.sidebar && theme.sidebar.email && config.resume && config.resume.email) { %>
-          <p><a href='<%- 'mailto:' + config.resume.email %>'><i class="fas fa-envelope fa-fw"></i>&nbsp;&nbsp;<%- config.resume.email %></a></p>
-        <% } %>
-        <% if (theme.sidebar && theme.sidebar.phone && config.resume && config.resume.phone) { %>
-          <p><a href='<%- 'tel:' + config.resume.phone %>'><i class="fas fa-phone-alt fa-fw"></i>&nbsp;&nbsp;<%- config.resume.phone %></a></p>
-        <% } %>
+        <% ((config.resume && config.resume.contact ) || []).forEach(function(value){ %>
+          <p><a <%if(value.url){%>href='<%- value.url %>'<%}%>>
+            <i class="<%- value.icon %> fa-fw"></i>&nbsp;&nbsp;<%- value.text %></a></p>
+        <%})%>
       </div>
     <hr><br>
     </header>
@@ -20,7 +18,7 @@
         <% }) %>
       </ul>
     </div>
-    <% if (theme.sidebar && theme.sidebar.download && config.resume && config.resume.download) { %>
+    <% if (config.resume && config.resume.download) { %>
       <div class="footer">
         <a class="button" href="<%- config.resume.download.url %>"><i class="<%- config.resume.download.icon %>"></i> <%- config.resume.download.title %></a>
       </div>

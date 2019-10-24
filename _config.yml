@@ -1,31 +1,30 @@
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # 为了保护隐私，下面这段请复制到自己的博客根目录的_config.yml文件中
+# 简历信息
 resume:
   # 简历标题
   title: 简历标题
   # 应聘者姓名
-  name: 快乐的小码农
-  # 邮箱
-  email: me@xaoxuu.com
-  # 电话号码
-  phone: 18888888888
+  name: 姓名
+  # 联系方式
+  contact:
+    # 邮箱
+    - icon: fas fa-envelope
+      text: me@xaoxuu.com
+      url: mailto:me@xaoxuu.com
+    # 电话号码
+    - icon: fas fa-phone-alt
+      text: 1xxxxxxxxxx
+      url: tel:10086
   # 附件下载链接
   download:
-    title: 下载PDF简历
+    title: 下载简历模板
     icon: fas fa-download fa-fw
-    url: https://xaoxuu.com
+    url: https://github.com/xaoxuu/hexo-theme-resume
 
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # 这些是样式设置，直接修改即可生效
-# 侧边栏
-sidebar:
-  # 显示邮箱
-  email: true
-  # 显示手机号
-  phone: true
-  # 显示下载简历按钮
-  download: true
 # 页脚
 footer:
   # 显示copyright

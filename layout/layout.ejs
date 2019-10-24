@@ -18,7 +18,6 @@
     <meta name="msapplication-TileColor" content="#f24e32">
     <meta name="msapplication-config" content="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-favicon@19.9.7/browserconfig.xml">
     <meta name="theme-color" content="#FFFFFF">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 
     <!-- style.css -->
@@ -37,7 +36,7 @@
     <div id="mobile-bar" <%- isIndex ? 'class="top"' : '' %>>
       <a class="menu-button fas fa-bars"></a>
       <h2 class="nav-title"><%- (config.resume && config.resume.title) ? config.resume.title : theme.resume.title %></h2>
-      <% if (theme.sidebar && theme.sidebar.download && config.resume && config.resume.download) { %>
+      <% if (config.resume && config.resume.download) { %>
         <a class="menu-button right fas fa-download" href="<%- config.resume.download.url %>"></a>
       <% } %>
     </div>
