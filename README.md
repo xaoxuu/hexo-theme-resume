@@ -1,14 +1,14 @@
-# 简历主题
+# Resume Theme for hexo
 
-示例：https://mxclub.github.io/resume
+- Live Demo & Documents: https://resume.js.org/
+- Source Codes: https://xaoxuu.com/wiki/hexo-theme-resume/
 
-文档：https://xaoxuu.com/wiki/hexo-theme-resume/
 
-示例源码：https://github.com/xaoxuu/resume-example
+# Hexo简历主题
 
-主题源码：https://github.com/xaoxuu/hexo-theme-resume
+- Demo及文档： https://resume.js.org/zh-cn/
+- 主题源码： https://xaoxuu.com/wiki/hexo-theme-resume/
 
 
 
 > 附：一个适合简历的Typora主题：[vue-pdf](https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume/source/css/vue-pdf.css)
-

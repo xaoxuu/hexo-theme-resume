@@ -6,7 +6,7 @@ cdn:
   common: https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume/source/js/common.js
   escape: https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume/source/js/css.escape.js
   smooth_scroll: https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume/source/js/smooth-scroll.min.js
-  css: https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume/source/css/style.min.css
+  # css: https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume/source/css/style.min.css
   # 可选插件，图片放大
   fancybox:
     css: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css
@@ -16,28 +16,26 @@ cdn:
 robots: noindex,nofollow
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-# 为了保护隐私，下面这段请复制到自己的博客根目录的_config.yml文件中
-# 简历信息
-resume:
-  # 简历标题
-  title: 简历标题
-  # 应聘者姓名
-  name: 姓名
-  # 联系方式
-  contact:
-    # 邮箱
-    - icon: fas fa-envelope
-      text: me@xaoxuu.com
-      url: mailto:me@xaoxuu.com
-    # 电话号码
-    - icon: fas fa-phone-alt
-      text: 1xxxxxxxxxx
-      url: tel:10086
-  # 附件下载链接
-  download:
-    title: 下载简历模板
-    icon: fas fa-download fa-fw
-    url: https://github.com/xaoxuu/hexo-theme-resume
+# 为了保护隐私，下面这段请复制到 front-matter 中
+# # 简历标题
+# title: 简历标题
+# # 应聘者姓名
+# name: 姓名
+# # 联系方式
+# contact:
+#   # 邮箱
+#   - icon: fas fa-envelope
+#     text: me@xaoxuu.com
+#     url: mailto:me@xaoxuu.com
+#   # 电话号码
+#   - icon: fas fa-phone-alt
+#     text: 1xxxxxxxxxx
+#     url: tel:10086
+# # 附件下载链接
+# download:
+#   title: 下载简历模板
+#   icon: fas fa-download fa-fw
+#   url: https://github.com/xaoxuu/hexo-theme-resume
 
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

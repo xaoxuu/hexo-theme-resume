@@ -1,10 +1,10 @@
 <div class="sidebar">
   <div class="sidebar-inner">
-    <header class='header'><h2><%- (config.resume && config.resume.name) ? config.resume.name : theme.resume.name %></h2>
+    <header class='header'><h2><%- page.name %></h2>
       <div class='meta'>
-        <% ((config.resume && config.resume.contact ) || []).forEach(function(value){ %>
+        <% (page.contact||[]).forEach(function(value){ %>
           <p><a <%if(value.url){%>href='<%- value.url %>'<%}%>>
-            <i class="<%- value.icon %> fa-fw"></i>&nbsp;&nbsp;<%- value.text %></a></p>
+            <i class="<%- value.icon %> fa-fw"></i>&nbsp;<%- value.text %></a></p>
         <%})%>
       </div>
     <hr><br>
@@ -18,9 +18,9 @@
         <% }) %>
       </ul>
     </div>
-    <% if (config.resume && config.resume.download) { %>
+    <% if (page.download) { %>
       <div class="footer">
-        <a class="button" href="<%- config.resume.download.url %>"><i class="<%- config.resume.download.icon %>"></i> <%- config.resume.download.title %></a>
+        <a class="button" href="<%- page.download.url %>"><i class="<%- page.download.icon %>"></i> <%- page.download.title %></a>
       </div>
     <% } %>
   </div>

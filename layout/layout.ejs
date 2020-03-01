@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <title><%- (config.resume && config.resume.title) ? config.resume.title : theme.resume.title %></title>
+    <title><%- page.resume_title %></title>
     <% if (config.keywords){ %>
       <meta name="keywords" content="<%- config.keywords %>">
     <% } %>
@@ -46,9 +46,9 @@
   <body class="docs">
     <div id="mobile-bar">
       <a class="menu-button fas fa-bars"></a>
-      <h2 class="nav-title"><%- (config.resume && config.resume.title) ? config.resume.title : theme.resume.title %></h2>
-      <% if (config.resume && config.resume.download) { %>
-        <a class="menu-button right fas fa-download" href="<%- config.resume.download.url %>"></a>
+      <h2 class="nav-title"><%- page.resume_title %></h2>
+      <% if (page.download) { %>
+        <a class="menu-button right fas fa-download" href="<%- page.download.url %>"></a>
       <% } %>
     </div>
     <%- js(theme.cdn.vue) %>
@@ -56,7 +56,7 @@
       Vue.config.productionTip = false
       window.PAGE_TYPE = "resume"
     </script>
-    
+
     <div id="main" class="fix-sidebar">
       <%- body %>
     </div>
