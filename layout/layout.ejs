@@ -18,12 +18,14 @@
     <meta name="msapplication-TileColor" content="#f24e32">
     <meta name="msapplication-config" content="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-favicon@19.9.7/browserconfig.xml">
     <meta name="theme-color" content="#FFFFFF">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
+    <% if (theme.cdn.fancybox && theme.cdn.fancybox.css) { %>
+      <%- css(theme.cdn.fancybox.css) %>
+    <% } %>
     <!-- style.css -->
     <%- css(isIndex ? 'css/index' : 'css/page') %>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
 
     <script>
@@ -66,33 +68,26 @@
     <script src="<%- url_for("js/css.escape.js") %>"></script>
     <script src="<%- url_for("js/common.js") %>"></script>
 
-
-    <!-- fastclick -->
-    <script src="https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      FastClick.attach(document.body)
-    }, false)
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-    <script>
-      let LAZY_LOAD_IMAGE = "<%- config.lazyload %>";
-      $("body").find("fancybox").find("img").each(function () {
-          var element = document.createElement("a");
-          $(element).attr("data-fancybox", "gallery");
-          $(element).attr("href", $(this).attr("src"));
-          /* 图片采用懒加载处理时,
-           * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
-           * 那么此处将原本的属性名src替换为对应属性名data-original,
-           * 修改如下
-           */
-           if (LAZY_LOAD_IMAGE) {
-             $(element).attr("href", $(this).attr("data-original"));
-           }
-          $(this).wrap(element);
-      });
-    </script>
+    <% if (theme.cdn.fancybox && theme.cdn.fancybox.js) { %>
+      <script src="<%- theme.cdn.fancybox.js %>"></script>
+      <script>
+        let LAZY_LOAD_IMAGE = "<%- config.lazyload %>";
+        $("body").find("fancybox").find("img").each(function () {
+            var element = document.createElement("a");
+            $(element).attr("data-fancybox", "gallery");
+            $(element).attr("href", $(this).attr("src"));
+            /* 图片采用懒加载处理时,
+             * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+             * 那么此处将原本的属性名src替换为对应属性名data-original,
+             * 修改如下
+             */
+             if (LAZY_LOAD_IMAGE) {
+               $(element).attr("href", $(this).attr("data-original"));
+             }
+            $(this).wrap(element);
+        });
+      </script>
+    <% } %>
 
   </body>
 </html>

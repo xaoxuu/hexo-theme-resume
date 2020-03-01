@@ -1,3 +1,7 @@
+cdn:
+  fancybox:
+    css: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css
+    js: https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # 为了保护隐私，下面这段请复制到自己的博客根目录的_config.yml文件中
 # 简历信息
@@ -28,6 +32,6 @@ resume:
 # 页脚
 footer:
   # 显示copyright
-  copyright: '[Copyright © 2013-2019 Mr. Xu](https://xaoxuu.com)'
+  copyright: '[Copyright © 2017-2020 Mr. X](https://xaoxuu.com)'
   # 显示访问量
-  counter: true
+  counter: false
