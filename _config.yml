@@ -1,12 +1,17 @@
 cdn:
+  # 基础库必须使用
   jquery: https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js
-  fancybox:
-    css: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css
-    js: https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js
+  vue: https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js
+  # 可以注释掉，但会加载本地资源  （如果自行修改样式，请注释掉css）
   common: https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume/source/js/common.js
   escape: https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume/source/js/css.escape.js
   smooth_scroll: https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume/source/js/smooth-scroll.min.js
-  css: https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume/source/css/page.min.css
+  # css: https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume/source/css/page.min.css
+  # 可选插件，图片放大
+  fancybox:
+    css: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css
+    js: https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js
+
 
 robots: noindex,nofollow
 
