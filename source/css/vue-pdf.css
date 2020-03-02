@@ -3,12 +3,19 @@
     --control-text-color: #777;
 }
 
+@font-face {
+    font-family: 'Courier';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://cdn.jsdelivr.net/gh/xaoxuu/cdn-fonts/Courier/Courier.dfont) format('dfont');
+}
+
 html {
     font-size: 12px;
 }
 
 body {
-    font-family: Menlo, Monaco, "Helvetica Neue", Arial, sans-serif, cursive !important;
+    font-family: Courier, Menlo, Monaco, "Helvetica Neue", Arial, sans-serif, cursive !important;
     color: #24394e;
     -webkit-font-smoothing: antialiased;
     line-height: 1.6em;
@@ -419,7 +426,7 @@ table tr td:last-child {
 
 .md-image > .md-meta {
     border-radius: 3px;
-    font-family: Menlo, Monaco, "Helvetica Neue", Arial, sans-serif, cursive;
+    font-family: Courier, Menlo, Monaco, "Helvetica Neue", Arial, sans-serif, cursive;
     padding: 2px 0 0 4px;
     font-size: 0.9em;
     color: inherit;
@@ -464,7 +471,7 @@ header,
 .context-menu,
 .megamenu-content,
 footer {
-    font-family: Menlo, Monaco, "Helvetica Neue", Arial, sans-serif, cursive;
+    font-family: Courier, Menlo, Monaco, "Helvetica Neue", Arial, sans-serif, cursive;
 }
 
 .file-node-content:hover .file-node-icon,
