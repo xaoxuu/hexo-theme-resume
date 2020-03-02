@@ -1,13 +1,13 @@
 # Resume Theme for hexo
 
 - Live Demo & Documents: https://resume.js.org/
-- Source Codes: https://xaoxuu.com/wiki/hexo-theme-resume/
+- Source Codes: https://github.com/xaoxuu/hexo-theme-resume/
 
 
 # Hexo简历主题
 
 - Demo及文档： https://resume.js.org/zh-cn/
-- 主题源码： https://xaoxuu.com/wiki/hexo-theme-resume/
+- 主题源码： https://github.com/xaoxuu/hexo-theme-resume/
 
 
 
