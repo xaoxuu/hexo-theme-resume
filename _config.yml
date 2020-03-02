@@ -3,10 +3,10 @@ cdn:
   jquery: https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js
   vue: https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js
   # When these CDN resources are deleted, local resources are loaded.
-  common: https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume/source/js/common.js
-  escape: https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume/source/js/css.escape.js
-  smooth_scroll: https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume/source/js/smooth-scroll.min.js
-  # css: https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume/source/css/style.min.css
+  common: https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume@1.0.0/source/js/common.js
+  escape: https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume@1.0.0/source/js/css.escape.js
+  smooth_scroll: https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume@1.0.0/source/js/smooth-scroll.min.js
+  css: https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume@1.0.0/source/css/style.min.css
   # Optional plug-in: image zoom
   fancybox:
     css: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css
