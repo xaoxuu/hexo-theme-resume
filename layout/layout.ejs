@@ -66,15 +66,11 @@
       <%- js(['js/smooth-scroll.min.js']) %>
     <% } %>
 
-    <footer id="footer">
-      <% if (theme.footer.copyright) { %>
-        <p><%- markdown(theme.footer.copyright) %></p>
-      <% } %>
-      <% if (theme.footer.counter) { %>
-        <p>本站总访问量为 <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次</p>
-        <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
-      <% } %>
-    </footer>
+    <% if (theme.copyright) { %>
+      <footer id="footer">
+        <p><%- markdown(theme.copyright) %></p>
+      </footer>
+    <% } %>
 
     <%- js(theme.cdn.jquery) %>
     <% if (theme.cdn.common) { %>

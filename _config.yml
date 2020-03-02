@@ -1,48 +1,19 @@
 cdn:
-  # 基础库必须使用
+  # These base libraries cannot be deleted
   jquery: https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js
   vue: https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js
-  # 可以注释掉，但会加载本地资源  （如果自行修改样式，请注释掉css）
+  # When these CDN resources are deleted, local resources are loaded.
   common: https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume/source/js/common.js
   escape: https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume/source/js/css.escape.js
   smooth_scroll: https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume/source/js/smooth-scroll.min.js
   # css: https://cdn.jsdelivr.net/gh/xaoxuu/hexo-theme-resume/source/css/style.min.css
-  # 可选插件，图片放大
+  # Optional plug-in: image zoom
   fancybox:
     css: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css
     js: https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js
 
-
+# robots meta tag
 robots: noindex,nofollow
 
-# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-# 为了保护隐私，下面这段请复制到 front-matter 中
-# # 简历标题
-# title: 简历标题
-# # 应聘者姓名
-# name: 姓名
-# # 联系方式
-# contact:
-#   # 邮箱
-#   - icon: fas fa-envelope
-#     text: me@xaoxuu.com
-#     url: mailto:me@xaoxuu.com
-#   # 电话号码
-#   - icon: fas fa-phone-alt
-#     text: 1xxxxxxxxxx
-#     url: tel:10086
-# # 附件下载链接
-# download:
-#   title: 下载简历模板
-#   icon: fas fa-download fa-fw
-#   url: https://github.com/xaoxuu/hexo-theme-resume
-
-
-# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-# 这些是样式设置，直接修改即可生效
-# 页脚
-footer:
-  # 显示copyright
-  copyright: '[Copyright © 2017-2020 Mr. X](https://xaoxuu.com)'
-  # 显示访问量
-  counter: false
+# the footer of your site
+copyright: '[Copyright © 2017-2020 Mr. X](https://xaoxuu.com)'

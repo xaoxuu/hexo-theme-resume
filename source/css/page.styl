@@ -36,6 +36,11 @@
       margin: 0 1px
     img
       border-radius: 2px
+    @media screen and (max-width: 425px)
+      a
+        margin: 0 0.5px
+      img
+        border-radius: 1px
   img
     max-width: 100%
   span.light
@@ -104,7 +109,6 @@
     // HACK: Create area underneath paragraphs
     // and lists that will be on top of heading
     // anchors, for easier text highlighting.
-    margin: 1.2em 0
     position: relative
     z-index: 1
   ul, ol
@@ -151,6 +155,7 @@
     &.fa-fw
       text-align: justify
   a
+    word-break: break-all
     color: $color_link
     font-weight: 600
     hoverable_text()
@@ -464,13 +469,13 @@
         line-height: 60px
         font-size: 28px
         box-shadow: $box-shadow-nav
-
-      border-radius: 8px
+      border-radius: 0px
       color: #34495e
       img
         margin: .4em auto
       &:hover
         text-decoration: none
+        border-radius: 8px
         background: alpha($color_link_highlight, 0.15)
         &>img:first-child
           transform: scale(1.1) translateY(-8px)
