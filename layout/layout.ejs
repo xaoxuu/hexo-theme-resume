@@ -12,11 +12,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <title><%- page.resume_title %></title>
-    <% if (config.keywords){ %>
-      <meta name="keywords" content="<%- config.keywords %>">
+    <% if (page.keywords){ %>
+      <meta name="keywords" content="<%- page.keywords %>">
     <% } %>
-    <% if (config.description){ %>
-      <meta name="description" content="<%- config.description %>">
+    <% if (page.description){ %>
+      <meta name="description" content="<%- page.description %>">
     <% } %>
 
     <!-- import meta -->
@@ -92,11 +92,6 @@
             var element = document.createElement("a");
             $(element).attr("data-fancybox", "gallery");
             $(element).attr("href", $(this).attr("src"));
-            /* 图片采用懒加载处理时,
-             * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
-             * 那么此处将原本的属性名src替换为对应属性名data-original,
-             * 修改如下
-             */
              if (LAZY_LOAD_IMAGE) {
                $(element).attr("href", $(this).attr("data-original"));
              }
