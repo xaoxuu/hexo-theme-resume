@@ -13,7 +13,6 @@
   max-width: 720px
   margin: 0 auto
   padding-left: 40px
-  text-align: justify
   // >:first-child
   //   padding-top: 0
   //   margin-top: 0
@@ -69,6 +68,8 @@
     padding-bottom: .7em
     border-bottom: 1px solid $border
     font-size: 1.6em
+    @media screen and (max-width: 425px)
+      font-size: 1.4em
     a
       color: $dark
     &:before
@@ -78,6 +79,8 @@
     line-height: 1.2
     position: relative
     font-size: 1.4em
+    @media screen and (max-width: 425px)
+      font-size: 1.3em
     a, button
       color: $color_link_highlight
     > a:before
@@ -148,7 +151,6 @@
     &.fa-fw
       text-align: justify
   a
-    word-break: break-all
     color: $color_link
     font-weight: 600
     hoverable_text()
@@ -235,7 +237,6 @@
       code
         background-color: #efefef
   p
-    word-break: break-all
     strong
       // margin 0 2px
     &.tip, &.success
@@ -432,10 +433,10 @@
     display: flex
     flex-wrap: wrap
     margin: $gap 0
-    justify-content: flex-between
+    justify-content: flex-start
     align-items: flex-start
-    @media screen and (max-width: 768px)
-      justify-content: center
+    @media screen and (max-width: 500px)
+      justify-content: space-between
     a
       transition_all()
       margin: 0
@@ -448,7 +449,12 @@
       padding: 8px 16px
       text-align: center
       font-size: .85em
-      width:"calc(100%/6 - 16px)"
+      min-width: 48px
+      width: 0.1 * 100%
+      @media screen and (max-width: 425px)
+        width: "calc(100% * 0.3 - %s)" % 32px
+      @media screen and (max-width: 320px)
+        width: "calc(100% * 0.5 - %s)" % 32px
       &>img:first-child
         transition_all()
         height: 48px
