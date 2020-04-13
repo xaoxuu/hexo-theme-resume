@@ -22,6 +22,7 @@ body {
     letter-spacing: 0;
     margin: 0;
     overflow-x: hidden;
+    text-align: justify;
 }
 
 #write {
@@ -139,7 +140,7 @@ h3 {
 }
 
 h4 {
-    font-size: 1em;
+    font-size: 0.8em;
     margin-top: 4px;
     color: #516273;
     margin-bottom: 16px;
@@ -161,6 +162,9 @@ ol,
 dl,
 table {
     margin: 0.8em 0;
+}
+blockquote {
+  font-size: 0.8em;
 }
 
 li > ol,
@@ -186,8 +190,7 @@ body > h2:first-child {
 h1:first-child {
     text-align: center;
     margin-top: 30px;
-    margin-bottom: 80px;
-    padding-bottom: 0px;
+    margin-bottom: 10px;
 }
 
 body > h1:first-child {
