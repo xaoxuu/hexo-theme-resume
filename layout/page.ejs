@@ -1,6 +1,10 @@
 <div class="sidebar">
   <div class="sidebar-inner">
-    <header class='header'><h2><%- page.name %></h2>
+    <header class='header'>
+      <h2><%- page.name %></h2>
+      <% if (page.job) { %>
+        <p class='job'><%- page.job %></p>
+      <% } %>
       <div class='meta'>
         <% (page.contact||[]).forEach(function(value){ %>
           <p><a <%if(value.url){%>href='<%- value.url %>'<%}%>>
@@ -27,5 +31,24 @@
 </div>
 
 <div class="content with-sidebar">
+  <div class='resume-header'>
+    <% if (page.avatar) { %>
+      <div class='avatar'><img no-lazy src='<%- page.avatar %>'/></div>
+    <% } %>
+    <h1 class='resume-title'><%- page.resume_title %></h1>
+    <p class='description'><%- page.description %></p>
+    <% if (page.social) { %>
+      <div class='social-btns'>
+        <% page.social.forEach((item, i) => { %>
+          <a href="<%- url_for(item.url) %>" class="social-link"><i class='<%- item.icon %> fa-fw'></i><%- item.text %></a>
+        <% }) %>
+      </div>
+    <% } %>
+  </div>
   <%- page.content %>
+  <% if (page.resume_footer) { %>
+    <div class="resume-footer">
+      <%- markdown(page.resume_footer) %>
+    </div>
+  <% } %>
 </div>

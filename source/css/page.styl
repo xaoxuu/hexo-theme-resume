@@ -68,7 +68,7 @@
       content: ""
       display: block
       visibility: hidden
-      height: $heading-link-padding-top
+      height: 24px
   h2
     margin: $h2-margin-top 0 .8em
     padding-bottom: .7em
@@ -78,8 +78,6 @@
       font-size: 1.4em
     a
       color: $dark
-    &:before
-      margin-top: -1 * $heading-link-padding-top + 15px
   h3
     margin: $h3-margin-top 0 0
     line-height: 1.2
@@ -88,7 +86,7 @@
     @media screen and (max-width: 425px)
       font-size: 1.3em
     a, button
-      color: $color_link_highlight
+      color: $color_theme
     > a:before
       color: $color_theme
       position: absolute
@@ -98,11 +96,12 @@
       font-size: 1.2em
       line-height: 1
       font-weight: bold
-    &:before
-      margin-top: -1 * $heading-link-padding-top - 15px
+  h2+h3
+    margin-top: 0
   h4
     margin: $h4-margin-top 0 0
     color: $medium
+    font-size: 16px
   figure
     margin: 1.2em 0
   p, ul, ol
@@ -410,31 +409,41 @@
   color: #FE5F58
 
 .content
-  grid
+  .resume-header
     display: block
     margin: $gap 0
-    padding: $gap
+    padding: $gap * 2 $gap
     background: $gridbg
     border-radius: 4px
+    .avatar img
+      width: 80px
+      height: 80px
+      display: block
+      margin: $gap auto
+      margin-top: $gap
+      border-radius: 50%
     h1
       margin-top: $gap * 2
       line-height: 1.2
       position: relative
       font-size: 1.4em
       text-align: center
+    .description
+      text-align: center
+      font-size: 16px
+    .social-btns
+      text-align: center
+      .social-link
+        padding: 4px 8px
+        margin: 0 8px
+        border-radius: 2px
   p
     &[subtitle]
       margin-top: $gap * 0.5
     &[center]
       text-align: center
 
-  avatar img
-    width: 80px
-    height: 80px
-    display: block
-    margin: $gap auto
-    margin-top: $gap * 2
-    border-radius: 50%
+
   btns
     display: flex
     flex-wrap: wrap
@@ -454,7 +463,7 @@
       line-height: 1.5
       padding: 8px 12px
       text-align: center
-      font-size: .85em
+      font-size: 12.5px
       min-width: 48px
       width: 0.1 * 100%
       @media screen and (max-width: 425px)
@@ -487,3 +496,34 @@
     &[rounded] > a
       &>img:first-child
         border-radius: 12px
+
+.content
+  div.time
+    margin-top: 2px
+    margin-bottom: 16px
+    span
+      font-weight: 600
+      font-size: 14px
+      opacity: .75
+  span.keyword
+    margin-right: 12px
+    font-weight: bold
+    color: $color_link_highlight
+    font-size: 15px
+    &:before
+      content: '#'
+      opacity: 0.5
+
+
+
+.resume-footer
+  margin-top: 120px
+  // border-top: 1px solid alpha($light, .2)
+  padding: 10px 0 80px
+  color: $light
+  p
+    font-size: .9em
+  a
+    color: $light
+    hoverable_text()
+    text-decoration: underline
