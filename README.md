@@ -23,7 +23,7 @@ Then delete the redundant dependency packages (important), open `package.json`, 
   "name": "hexo-site",
   "private": true,
   "hexo": {
-    "version": "5.0.0"
+    "version": "5.2.0"
   },
   "scripts": {
     "start": "hexo server",
@@ -34,16 +34,13 @@ Then delete the redundant dependency packages (important), open `package.json`, 
     "node": ">=8.9.0"
   },
   "dependencies": {
-    "hexo": "^5.0.0",
-    "hexo-all-minifier": "^0.5.3",
+    "hexo": "^5.2.0",
     "hexo-autonofollow": "^1.0.1",
     "hexo-deployer-git": "^2.1.0",
-    "hexo-fs": "^3.1.0",
-    "hexo-lazyload-image": "^1.0.9",
-    "hexo-offline": "^1.0.0",
+    "hexo-neat": "^1.0.9",
     "hexo-renderer-ejs": "^1.0.0",
-    "hexo-renderer-marked": "^3.0.0",
-    "hexo-renderer-stylus": "^1.1.0",
+    "hexo-renderer-marked": "^3.2.0",
+    "hexo-renderer-stylus": "^2.0.1",
     "hexo-server": "^1.0.0"
   }
 }
@@ -80,7 +77,7 @@ npm i hexo-theme-resume
   "name": "hexo-site",
   "private": true,
   "hexo": {
-    "version": "5.0.0"
+    "version": "5.2.0"
   },
   "scripts": {
     "start": "hexo server",
@@ -91,16 +88,13 @@ npm i hexo-theme-resume
     "node": ">=8.9.0"
   },
   "dependencies": {
-    "hexo": "^5.0.0",
-    "hexo-all-minifier": "^0.5.3",
+    "hexo": "^5.2.0",
     "hexo-autonofollow": "^1.0.1",
     "hexo-deployer-git": "^2.1.0",
-    "hexo-fs": "^3.1.0",
-    "hexo-lazyload-image": "^1.0.9",
-    "hexo-offline": "^1.0.0",
+    "hexo-neat": "^1.0.9",
     "hexo-renderer-ejs": "^1.0.0",
-    "hexo-renderer-marked": "^3.0.0",
-    "hexo-renderer-stylus": "^1.1.0",
+    "hexo-renderer-marked": "^3.2.0",
+    "hexo-renderer-stylus": "^2.0.1",
     "hexo-server": "^1.0.0"
   }
 }

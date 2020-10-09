@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-resume",
-  "version": "2.0.0-rc.1",
+  "version": "2.0.0",
   "description": "Minimalist resume theme for Hexo.",
   "main": "package.json",
   "scripts": {
@@ -22,6 +22,6 @@
   },
   "homepage": "https://resume.js.org",
   "devDependencies": {
-    "hexo": "5.0.0"
+    "hexo": "5.2.0"
   }
 }
