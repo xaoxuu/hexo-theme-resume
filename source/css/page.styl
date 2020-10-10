@@ -91,7 +91,6 @@
       color: $color_theme
       position: absolute
       left: -0.7em
-      margin-top: -0.05em
       padding-right: 0.5em
       font-size: 1.2em
       line-height: 1
@@ -367,12 +366,9 @@
         display: block
         visibility: hidden
         height: $mobile-heading-link-padding-top
-    h2
+    h2,h3
       &:before
         margin-top: -1 * $mobile-heading-link-padding-top + 0px
-    h3
-      &:before
-        margin-top: -1 * $mobile-heading-link-padding-top - 20px
   .footer
     margin-left: 0
     text-align: center
@@ -518,8 +514,7 @@
 
 .resume-footer
   margin-top: 120px
-  // border-top: 1px solid alpha($light, .2)
-  padding: 10px 0 80px
+  padding: 10px 0
   color: $light
   p
     font-size: .9em
