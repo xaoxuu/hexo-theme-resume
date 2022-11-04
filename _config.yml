@@ -16,4 +16,7 @@ cdn:
 robots: noindex,nofollow
 
 # the footer of your site
-copyright: '[Copyright © 2017-2020 XXX](/)'
+copyright: '[Copyright © 2017-2020 xaoxuu](/)'
+
+# All value above can be overrided by _config.resume.yml in the root of hexo
+# So don't modify anything here
